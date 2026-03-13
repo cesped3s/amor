@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Para Fátima 💛 | Feliz inicio de la primavera</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 241, 118, 0.45), transparent 25%),
+        radial-gradient(circle at 80% 25%, rgba(255, 213, 79, 0.35), transparent 20%),
+        radial-gradient(circle at 50% 80%, rgba(174, 234, 0, 0.12), transparent 25%),
+        linear-gradient(180deg, #fffdf3 0%, #fff8d6 35%, #f4ffd9 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scene {
+      position: relative;
+      width: min(1100px, 96vw);
+      height: min(760px, 96vh);
+      overflow: hidden;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.25);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 20px 60px rgba(120, 90, 0, 0.12);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 20px;
+      opacity: 0;
+      animation: floatSpark 5s linear infinite;
+      z-index: 2;
+      filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.4));
+    }
+
+    .s1 { left: 10%; top: 75%; animation-delay: 2s; }
+    .s2 { left: 20%; top: 68%; animation-delay: 4s; }
+    .s3 { right: 14%; top: 70%; animation-delay: 3s; }
+    .s4 { right: 22%; top: 62%; animation-delay: 5s; }
+    .s5 { left: 48%; top: 20%; animation-delay: 6s; }
+
+    @keyframes floatSpark {
+      0% { opacity: 0; transform: translateY(20px) scale(0.8) rotate(0deg); }
+      15% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(-140px) scale(1.25) rotate(18deg); }
+    }
+
+    .title-wrap {
+      position: absolute;
+      top: 30px;
+      width: 100%;
+      text-align: center;
+      z-index: 20;
+      padding: 0 16px;
+    }
+
+    .title {
+      font-size: clamp(28px, 4vw, 54px);
+      font-weight: 900;
+      color: #c89a00;
+      text-shadow: 0 3px 10px rgba(255, 193, 7, 0.22);
+      opacity: 0;
+      transform: translateY(-18px);
+      animation: fadeDown 1.1s ease forwards;
+      animation-delay: .3s;
+    }
+
+    .subtitle {
+      margin-top: 10px;
+      font-size: clamp(15px, 1.9vw, 24px);
+      color: #7b6415;
+      opacity: 0;
+      transform: translateY(-12px);
+      animation: fadeDown 1.1s ease forwards;
+      animation-delay: .9s;
+    }
+
+    @keyframes fadeDown {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .envelope {
+      position: absolute;
+      left: 50%;
+      top: 49%;
+      transform: translate(-50%, -50%);
+      width: min(300px, 70vw);
+      height: 200px;
+      z-index: 10;
+      opacity: 1;
+      animation: envelopeFade 1s ease forwards;
+      animation-delay: 6.8s;
+      perspective: 1200px;
+    }
+
+    @keyframes envelopeFade {
+      to { opacity: 0; transform: translate(-50%, -56%) scale(0.85); pointer-events: none; }
+    }
+
+    .env-back {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #fffaf0, #f8e8c0);
+      border-radius: 0 0 18px 18px;
+      border: 2px solid #e7c76b;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .env-front {
+      position: absolute;
+      inset: 0;
+      clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
+      background: linear-gradient(180deg, #ffe9a8, #f4cc5b);
+      border-radius: 0 0 18px 18px;
+      z-index: 4;
+    }
+
+    .env-flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      background: linear-gradient(180deg, #fff1bf, #ffd95a);
+      clip-path: polygon(0 0, 50% 100%, 100% 0);
+      transform-origin: top;
+      animation: flapOpen 1.3s ease forwards;
+      animation-delay: 1.6s;
+      z-index: 5;
+      border-top-left-radius: 18px;
+      border-top-right-radius: 18px;
+      backface-visibility: hidden;
+    }
+
+    @keyframes flapOpen {
+      to { transform: rotateX(180deg); }
+    }
+
+    .letter {
+      position: absolute;
+      left: 50%;
+      top: 28px;
+      transform: translateX(-50%);
+      width: 82%;
+      height: 150px;
+      background: linear-gradient(180deg, #ffffff, #fffaf1);
+      border-radius: 14px;
+      padding: 16px;
+      z-index: 3;
+      border: 1px solid #f0dfaa;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+      clip-path: inset(100% 0 0 0 round 14px);
+      animation: letterRise 1.8s ease forwards;
+      animation-delay: 2.3s;
+    }
+
+    @keyframes letterRise {
+      0% {
+        top: 28px;
+        clip-path: inset(100% 0 0 0 round 14px);
+        z-index: 3;
+      }
+      15% {
+        top: 28px;
+        clip-path: inset(0 0 0 0 round 14px);
+        z-index: 3;
+      }
+      55% {
+        top: -12px;
+        clip-path: inset(0 0 0 0 round 14px);
+        z-index: 3;
+      }
+      56% {
+        top: -14px;
+        clip-path: inset(0 0 0 0 round 14px);
+        z-index: 6;
+      }
+      100% {
+        top: -85px;
+        clip-path: inset(0 0 0 0 round 14px);
+        z-index: 6;
+      }
+    }
+      20% {
+        top: 28px;
+        clip-path: inset(0 0 0 0 round 14px);
+      }
+      100% {
+        top: -85px;
+        clip-path: inset(0 0 0 0 round 14px);
+      }
+    }
+
+    .letter h3 {
+      color: #b88900;
+      font-size: clamp(16px, 2vw, 24px);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .letter p {
+      color: #6a5720;
+      font-size: clamp(12px, 1.35vw, 16px);
+      line-height: 1.45;
+      text-align: center;
+    }
+
+    .ground {
+      position: absolute;
+      bottom: -15px;
+      left: -5%;
+      width: 110%;
+      height: 180px;
+      background: radial-gradient(circle at 50% 0%, #d7f59a 0%, #bce46e 50%, #9ccc65 100%);
+      border-radius: 50% 50% 0 0 / 35% 35% 0 0;
+      z-index: 1;
+    }
+
+    .stem {
+      position: absolute;
+      left: 50%;
+      bottom: 145px;
+      width: 12px;
+      height: 0;
+      margin-left: -6px;
+      border-radius: 10px;
+      background: linear-gradient(to bottom, #2e7d32, #4caf50);
+      z-index: 5;
+      animation: growStem 2.2s ease forwards;
+      animation-delay: 7.2s;
+    }
+
+    @keyframes growStem { from { height: 0; } to { height: 250px; } }
+
+    .leaf {
+      position: absolute;
+      width: 86px;
+      height: 42px;
+      opacity: 0;
+      z-index: 6;
+      background: linear-gradient(135deg, #7ed957, #2e7d32);
+      box-shadow: inset 0 -4px 10px rgba(0,0,0,0.08);
+    }
+
+    .leaf.left {
+      left: calc(50% - 98px);
+      bottom: 255px;
+      border-radius: 90% 0 90% 0;
+      transform: rotate(-28deg) scale(0);
+      animation: leafLeft .7s ease forwards;
+      animation-delay: 8.5s;
+    }
+
+    .leaf.right {
+      left: calc(50% + 12px);
+      bottom: 210px;
+      border-radius: 0 90% 0 90%;
+      transform: rotate(28deg) scale(0);
+      animation: leafRight .7s ease forwards;
+      animation-delay: 8.9s;
+    }
+
+    @keyframes leafLeft { to { opacity: 1; transform: rotate(-28deg) scale(1); } }
+    @keyframes leafRight { to { opacity: 1; transform: rotate(28deg) scale(1); } }
+
+    .flower {
+      position: absolute;
+      left: 50%;
+      bottom: 395px;
+      width: 0;
+      height: 0;
+      z-index: 8;
+    }
+
+    .petal {
+      position: absolute;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0);
+      background: radial-gradient(circle at 35% 35%, #fff59d 0%, #fdd835 48%, #fbc02d 100%);
+      box-shadow: 0 0 25px rgba(255, 215, 0, 0.28);
+      animation: bloom .55s ease forwards;
+    }
+
+    @keyframes bloom { to { opacity: 1; transform: scale(1); } }
+
+    .p1 { left: -45px; top: -140px; animation-delay: 9.3s; }
+    .p2 { left: 28px; top: -110px; animation-delay: 9.55s; }
+    .p3 { left: 58px; top: -35px; animation-delay: 9.8s; }
+    .p4 { left: 22px; top: 40px; animation-delay: 10.05s; }
+    .p5 { left: -45px; top: 70px; animation-delay: 10.3s; }
+    .p6 { left: -112px; top: 40px; animation-delay: 10.55s; }
+    .p7 { left: -148px; top: -35px; animation-delay: 10.8s; }
+    .p8 { left: -118px; top: -110px; animation-delay: 11.05s; }
+
+    .center {
+      position: absolute;
+      left: -38px;
+      top: -48px;
+      width: 76px;
+      height: 76px;
+      border-radius: 50%;
+      opacity: 0;
+      transform: scale(0);
+      z-index: 9;
+      background: radial-gradient(circle at 35% 35%, #8d6e63 0%, #6d4c41 55%, #4e342e 100%);
+      animation: centerIn .6s ease forwards;
+      animation-delay: 11.3s;
+      box-shadow: 0 0 16px rgba(0,0,0,0.12);
+    }
+
+    @keyframes centerIn { to { opacity: 1; transform: scale(1); } }
+
+    .pencil {
+      position: absolute;
+      width: 175px;
+      height: 30px;
+      z-index: 16;
+      transform-origin: left center;
+      animation: drawMotion 4.6s ease-in-out forwards;
+      animation-delay: 7s;
+    }
+
+    .pencil-body {
+      position: absolute;
+      left: 0;
+      top: 4px;
+      width: 120px;
+      height: 22px;
+      background: linear-gradient(to bottom, #ffe082, #fbc02d);
+      border: 2px solid #d4a514;
+      border-radius: 10px 0 0 10px;
+    }
+
+    .pencil-metal {
+      position: absolute;
+      left: 120px;
+      top: 5px;
+      width: 18px;
+      height: 20px;
+      background: linear-gradient(to bottom, #cfd8dc, #90a4ae);
+      border: 2px solid #90a4ae;
+    }
+
+    .pencil-eraser {
+      position: absolute;
+      left: 138px;
+      top: 5px;
+      width: 26px;
+      height: 20px;
+      background: linear-gradient(to bottom, #f8bbd0, #ec407a);
+      border: 2px solid #d81b60;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .pencil-tip-wood {
+      position: absolute;
+      left: -22px;
+      top: 4px;
+      width: 0; height: 0;
+      border-top: 11px solid transparent;
+      border-bottom: 11px solid transparent;
+      border-right: 22px solid #d7a86e;
+    }
+
+    .pencil-tip-lead {
+      position: absolute;
+      left: -32px;
+      top: 10px;
+      width: 0; height: 0;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 10px solid #333;
+    }
+
+    @keyframes drawMotion {
+      0%   { left: 57%; top: 72%; transform: rotate(118deg); }
+      18%  { left: 57%; top: 87%; transform: rotate(118deg); }
+      35%  { left: 48%; top: 69%; transform: rotate(28deg); }
+      50%  { left: 57%; top: 78%; transform: rotate(160deg); }
+      64%  { left: 53%; top: 52%; transform: rotate(6deg); }
+      76%  { left: 62%; top: 57%; transform: rotate(58deg); }
+      88%  { left: 45%; top: 58%; transform: rotate(200deg); }
+      100% { left: 43%; top: 49%; transform: rotate(236deg); }
+    }
+
+    .petals-fall {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 3;
+    }
+
+    .fall {
+      position: absolute;
+      top: -30px;
+      font-size: 22px;
+      opacity: 0;
+      animation: falling linear infinite;
+      animation-delay: 11.5s;
+    }
+
+    .f1 { left: 12%; animation-duration: 8s; }
+    .f2 { left: 28%; animation-duration: 10s; }
+    .f3 { left: 41%; animation-duration: 7.5s; }
+    .f4 { left: 57%; animation-duration: 9s; }
+    .f5 { left: 73%; animation-duration: 8.5s; }
+    .f6 { left: 86%; animation-duration: 10.5s; }
+
+    @keyframes falling {
+      0% { opacity: 0; transform: translateY(-20px) rotate(0deg); }
+      10% { opacity: 1; }
+      100% { opacity: 0; transform: translateY(820px) translateX(25px) rotate(260deg); }
+    }
+
+    .intro-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 40;
+      background: radial-gradient(circle at 50% 35%, rgba(255,215,0,0.08), transparent 30%), linear-gradient(180deg, #111 0%, #1b1200 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: overlayFade 1.4s ease forwards;
+      animation-delay: 1.2s;
+    }
+
+    .intro-card {
+      text-align: center;
+      padding: 30px 24px;
+      width: min(88%, 620px);
+      border-radius: 28px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,215,0,0.18);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+      animation: pulseGlow 2.5s ease-in-out infinite;
+    }
+
+    .intro-card h1 {
+      color: #ffd54f;
+      font-size: clamp(28px, 4vw, 54px);
+      margin-bottom: 14px;
+    }
+
+    .intro-card p {
+      color: #fff7cc;
+      font-size: clamp(15px, 1.8vw, 22px);
+      line-height: 1.6;
+    }
+
+    @keyframes overlayFade {
+      0%, 65% { opacity: 1; }
+      100% { opacity: 0; visibility: hidden; }
+    }
+
+    @keyframes pulseGlow {
+      0%,100% { transform: scale(1); box-shadow: 0 20px 50px rgba(0,0,0,0.35); }
+      50% { transform: scale(1.02); box-shadow: 0 24px 60px rgba(255,193,7,0.12); }
+    }
+
+    .message-box {
+      position: absolute;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%);
+      width: min(90%, 860px);
+      background: rgba(255, 255, 255, 0.84);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 215, 0, 0.25);
+      border-radius: 28px;
+      padding: 22px 26px;
+      text-align: center;
+      box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+      opacity: 0;
+      animation: fadeUp 1.2s ease forwards;
+      animation-delay: 11.8s;
+      z-index: 25;
+    }
+
+    .message-box h2 {
+      color: #c49000;
+      font-size: clamp(22px, 2.8vw, 34px);
+      margin-bottom: 10px;
+    }
+
+    .message-box p {
+      color: #5d4b1f;
+      line-height: 1.65;
+      font-size: clamp(15px, 1.55vw, 21px);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+      to { opacity: 1; transform: translateX(-50%) translateY(0); }
+    }
+
+    .signature {
+      display: block;
+      margin-top: 12px;
+      color: #9c6f00;
+      font-weight: 700;
+    }
+
+    .music-btn {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      z-index: 35;
+      background: rgba(255,255,255,0.85);
+      border: 2px solid rgba(255,215,0,0.35);
+      color: #8a6500;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      user-select: none;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .music-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+    }
+
+    @media (max-width: 768px) {
+      .scene { height: 95vh; }
+      .envelope { width: min(260px, 78vw); height: 180px; }
+      .letter { height: 135px; }
+      .ground { height: 150px; }
+      .message-box { padding: 18px; bottom: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="scene">
+    <div class="intro-overlay">
+      <div class="intro-card">
+        <h1>💛 Para Fátima 💛</h1>
+        <p>
+          Hay personas que llegan a tu vida y la vuelven más bonita…<br>
+          tú la convertiste en primavera. 🌼✨
+        </p>
+      </div>
+    </div>
+    <div class="sparkle s1">💛</div>
+    <div class="sparkle s2">✨</div>
+    <div class="sparkle s3">🌼</div>
+    <div class="sparkle s4">💖</div>
+    <div class="sparkle s5">✨</div>
+
+    <div class="title-wrap">
+      <div class="title">🌼 Feliz inicio de la primavera, Fátima 🌼</div>
+      <div class="subtitle">Hoy florece una flor amarilla… igual de hermosa como tú 💛</div>
+      <div class="subtitle" style="margin-top:8px;font-size:clamp(13px,1.4vw,18px);opacity:0;animation:fadeDown 1.1s ease forwards;animation-delay:1.3s;">Una sorpresa hecha para ti, mi amor ✨</div>
+    </div>
+
+    <div class="envelope">
+      <div class="env-back"></div>
+      <div class="letter">
+        <h3>Para ti, mi amor 💌</h3>
+        <p>
+          Quise regalarte algo bonito en este inicio de primavera…<br>
+          porque tú haces que mis días se sientan llenos de luz, color y amor.
+        </p>
+      </div>
+      <div class="env-front"></div>
+      <div class="env-flap"></div>
+    </div>
+
+    <div class="petals-fall">
+      <div class="fall f1">🌼</div>
+      <div class="fall f2">💛</div>
+      <div class="fall f3">✨</div>
+      <div class="fall f4">🌼</div>
+      <div class="fall f5">💖</div>
+      <div class="fall f6">✨</div>
+    </div>
+
+    <div class="stem"></div>
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+
+    <div class="flower">
+      <div class="petal p1"></div>
+      <div class="petal p2"></div>
+      <div class="petal p3"></div>
+      <div class="petal p4"></div>
+      <div class="petal p5"></div>
+      <div class="petal p6"></div>
+      <div class="petal p7"></div>
+      <div class="petal p8"></div>
+      <div class="center"></div>
+    </div>
+
+    <div class="pencil">
+      <div class="pencil-tip-lead"></div>
+      <div class="pencil-tip-wood"></div>
+      <div class="pencil-body"></div>
+      <div class="pencil-metal"></div>
+      <div class="pencil-eraser"></div>
+    </div>
+
+    <div class="message-box">
+      <h2>Para Fátima, mi flor más hermosa 💛</h2>
+      <p>
+        En este inicio de primavera quise regalarte algo pequeño,
+        pero hecho con todo mi corazón… porque cuando pienso en una flor amarilla,
+        inevitablemente pienso en ti.
+        <br><br>
+        <strong>Esta flor es tan bella como tú…</strong> aunque la verdad,
+        se queda corta. Porque ninguna flor podría compararse con tu dulzura,
+        con tu luz, con tu mirada y con la forma tan hermosa en que haces que mis días florezcan.
+        <br><br>
+        Tú eres mi color favorito, mi sonrisa más sincera y la razón por la que hasta los días simples se sienten especiales.
+        Gracias por existir, por ser tú, y por hacer que mi mundo se vea más bonito desde que estás en él.
+        <br><br>
+        <strong>Feliz inicio de la primavera, mi amor.</strong>
+        Ojalá esta flor te recuerde lo inmensamente especial que eres para mí. 🌼✨💖
+        <span class="signature">Con todo mi amor, para ti… siempre 💌</span>
+      </p>
+    </div>
+
+    <audio id="bgMusic" loop>
+      <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="music-btn" onclick="toggleMusic()">🎵 Tocar música</div>
+
+    <div class="ground"></div>
+  </div>
+
+  <script>
+    const audio = document.getElementById('bgMusic');
+    const musicBtn = document.querySelector('.music-btn');
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (!audio) return;
+      if (!isPlaying) {
+        audio.play().then(() => {
+          isPlaying = true;
+          musicBtn.textContent = '⏸️ Pausar música';
+        }).catch(() => {
+          musicBtn.textContent = '🎵 Toca aquí para escuchar';
+        });
+      } else {
+        audio.pause();
+        isPlaying = false;
+        musicBtn.textContent = '🎵 Tocar música';
+      }
+    }
+  </script>
+  </div>
+</body>
+</html>
