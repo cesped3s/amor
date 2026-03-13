@@ -618,20 +618,13 @@
     <div class="message-box">
       <h2>Para Fátima, mi flor más hermosa 💛</h2>
       <p>
-        En este inicio de primavera quise regalarte algo pequeño,
-        pero hecho con todo mi corazón… porque cuando pienso en una flor amarilla,
-        inevitablemente pienso en ti.
+        Así como esta flor amarilla florece con la llegada de la primavera,
+        tú haces florecer mi corazón cada día. <strong>Esta flor es tan bella como tú</strong>,
+        pero aun así se queda corta… porque no existe nada más bonito que tu sonrisa,
+        tu ternura y la forma en que iluminas mi vida.
         <br><br>
-        <strong>Esta flor es tan bella como tú…</strong> aunque la verdad,
-        se queda corta. Porque ninguna flor podría compararse con tu dulzura,
-        con tu luz, con tu mirada y con la forma tan hermosa en que haces que mis días florezcan.
-        <br><br>
-        Tú eres mi color favorito, mi sonrisa más sincera y la razón por la que hasta los días simples se sienten especiales.
-        Gracias por existir, por ser tú, y por hacer que mi mundo se vea más bonito desde que estás en él.
-        <br><br>
-        <strong>Feliz inicio de la primavera, mi amor.</strong>
-        Ojalá esta flor te recuerde lo inmensamente especial que eres para mí. 🌼✨💖
-        <span class="signature">Con todo mi amor, para ti… siempre 💌</span>
+        Gracias por ser mi primavera en cualquier estación. 🌼✨
+        <span class="signature">Con mucho amor, para ti 💌</span>
       </p>
     </div>
 
